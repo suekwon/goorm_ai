@@ -33,3 +33,5 @@ def calculator(num1, num2, op):
 
 
 # %%
+calculator(10, 20, '/')
+# %%
