@@ -20,4 +20,4 @@ chat_response = client.chat.complete(
 )
 print(chat_response.choices[0].message.content)
 
-사용자가 그만둔다는 어떤 문자를 입력하기 전까지 반복해서 사용자와 대화를 나누는 코드를 작성해보세요.
+# 사용자가 그만둔다는 어떤 문자를 입력하기 전까지 반복해서 사용자와 대화를 나누는 코드를 작성해보세요.

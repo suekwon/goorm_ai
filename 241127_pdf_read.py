@@ -10,8 +10,7 @@ from langchain.document_loaders import PyPDFLoader
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_mistralai import ChatMistralAI
 import os
-# api_key = os.environ.get('MISTRAL_API_KEY')
-# api_key = "Q4DPG78zp0O2ytxRQfUQjOW6Akg2Gdck"
+api_key = os.environ.get('MISTRAL_API_KEY')
 
 # import getpass
 # import os
@@ -60,24 +59,3 @@ contents_img = loader_img.load_and_split()
 loader_total = PyPDFium2Loader(file_path)
 contents_total = loader_total.load()
 print(contents_total[3].page_content)
-# %%
-
-pandas.DataFrame + matplotlib.pyplot
-숫자데이터
-.csv
-.xlsx
-
-DeepL
-
-LLM -> 데이터생성(책, 소설, 블로그 ...)
-인터넷 정보를 학습
-book. -> LLM -> 요약
-# %%
-langchain 내 함수 이용해서,
-word파일 불러오기
-ppt
-csv(pandas)
-website
-
-
-LLM, prompt, python, python+API(library),

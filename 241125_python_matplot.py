@@ -1,3 +1,79 @@
+# %%
+from matplotlib import font_manager, rc
+import mplfinance as mpf
+import matplotlib.font_manager as fm
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+
+# %%
+a = [2, 3, 4, 5, 6, 7]
+a = ['토끼', '사자', '호랑이', '곰', '여우', '늑대']
+type(a)
+# %%
+
+b = pd.Series(a)
+b.name = '동물'
+type(b)
+print(b.name)
+# %%
+# 엑셀컬럼 두 줄 만듬(a, b)
+a = pd.Series([1, 2, 3, 4], ['a', 'b', 'c', 'd'])
+b = pd.Series([5, 6, 7, 8], ['a', 'b', 'c', 'd'])
+c = pd.Series(['토끼', '사자', '호랑이', '곰'], ['a', 'b', 'c', 'd'])
+# %%
+# 컬럼 a, b 두 개를 하나로 합침
+d = pd.DataFrame([a, b])
+print(c.transpose())
+# %%
+
+dt = pd.DataFrame({'X': a, 'Y': b, 'Z': c})
+# %%
+dt['Z']  # 세로로 데이터가 들어옴
+dt['a':'a']  # 가로로 데이터가 들어옴
+dt[:2]
+
+# %%
+print(dt.loc['b':'c', 'Z':'Z'])
+print(dt.iloc[1:3, 2:3])
+
+# %%
+dt['X'].sort_values(ascending=False)
+dt.plot(kind='bar')
+
+# %%
+
+# %%
+dt.plot(kind='bar')
+plt.show()
+
+# %%
+# 1. 계약종별 전력사용량 월별_20190614.xls 파일 읽기
+power = pd.read_excel('계약종별 전력사용량 월별_20190614.xls')
+
+# %%
+# 2. ‘시구’. ‘고객호수’ 데이터 선택
+house = power[['시구', '고객호수(호)']]
+
+# %%
+# 3. ‘시구’. ‘사용량’ 데이터 선택
+use = power[['시구', '사용량(kWh)']]
+
+# 시구, 하나씩 나오게 groupby
+# %%
+power.groupby('시구').mean().plot(kind='bar')
+
+
+# %%
+# 한글깨짐 해결
+
+sns.set(font="AppleGothic",
+        rc={"axes.unicode_minus": False},
+        style='darkgrid')
+# %%
+
+
 # # 파이썬으로 ...만들기
 # # 1. 기능정의 (가상자산 가격을 조회하는 기능)
 # # -LLM: 가상자산이 무엇인지 간단하게 설명해줘.
@@ -47,40 +123,4 @@
 
 # mpf.plot(df, addplot=apd)
 
-# # %%
-
 # #%%
-
-
-# %%
-
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
-import mplfinance as mpf
-import pandas as pd
-
-# Set the font properties
-# Update this path to the location of your Korean font
-font_path = '/Users/cactus/Library/Fonts/NanumSquareR.ttf'
-fontprop = fm.FontProperties(fname=font_path, size=10)
-plt.rc('font', family=fontprop.get_name())
-
-from matplotlib import font_manager, rc
-font_path = "C:/Windows/Fonts/NGULIM.TTF"
-font = font_manager.FontProperties(fname=font_path).get_name()
-rc('font', family=font)
-
-# Your existing code
-df = pd.read_csv('./SPY_20110701_20120630_Bollinger.csv',
-                 index_col=0, parse_dates=True)
-mpf.make_addplot(df['LowerB'], type='scatter',
-                 label="추가된 scatter", title="한글폰트")
-
-# Plotting code
-apd = mpf.make_addplot(df['LowerB'], type='scatter',
-                       label="추가된 scatter", title="한글폰트"
-                       )
-mpf.plot(df, addplot=apd, title="한글폰트가 적용된 차트")
-# plt.show()
-
-# %%
