@@ -33,7 +33,7 @@ agent = initialize_agent(
 
 # %%
 
-# agent.run("생성형AI를 활용한 기본 교육후 프로젝트를 위한 기획서 초안을 한국어로 작성해줘. 프로젝트는 실생활에서 유용한 서비스를 제공하는 챗봇형태의 어플리케이션을 개발하는 거야. 어플리케이션의 세부 내용이 잘 표현될 수 있도록 자세하게 작성해줘. 프로젝트의 목적, 목표, 기대효과, 기능, 기술스택, 개발일정, 개발자 역할 등을 포함해줘. 각각의 항목마다 슬라이드를 작성해줘. 각 슬라이드에는 해당 항목의 내용이 잘 드러날 수 있도록 설명을 자세히 적어줘. 각 슬라이드의 제목은 해당 항목의 이름으로 해줘. 마지막으로 생성한 기획서를 파이썬을 이용해서 파워포인트 형식의 plan.pptx 파일로 저장해줘. ")
+# agent.run("생성형AI를 활용한 기본 교육후 프로젝트를 위한 기획서 초안을 한국어로 작성해줘. 프로젝트는 실생활에서 유용한 서비스를 제공하는 챗봇형태의 어플리케이션을 개발하는 거야. 어플리케이션의 세부 내용이 잘 표현될 수 있도록 자세하게 작성해줘. 프로젝트의 목적, 목표, 기대효과, 기능, 기술스택, 개발일정, 개발자 역할 등을 포함해줘. 각각의 항목마다 슬라이드를 작성해줘. 각 슬라이드에는 해당 항목의 내용이 잘 드러날 수 있도록 설명을 자세히 적어줘. 각 슬라이드의 제목은 해당 항목의 이름으로 해줘. 마지막으로 생성한 기획서를 파이썬을 이용해서 파워포인트 형식의 plan2.pptx 파일로 저장해줘. ")
 
 # %%
 
@@ -41,4 +41,4 @@ agent = initialize_agent(
 #           채팅기능
 #           파이썬코드로 작성하고, 작성한 코드를 chat.py 파이썬 파일로 저장해줘. streamlit, MistralAI 라이브러리가 설치되어 있어.       ")
 
-agent.run("with streamlit and MistralI, create a web app that can chat with users and answer questions that are related to menu and recipes of a Korean fine dining restaurant. The web app should have a chat interface where users can ask questions and get responses. create python .py file and save it as '241129_app.py'. streamlit and MistralAI are installed.")
+# agent.run("with streamlit and MistralI, create a web app that can chat with users and answer questions that are related to menu and recipes of a Korean fine dining restaurant. The web app should have a chat interface where users can ask questions and get responses. create python .py file and save it as '241129_app.py'. streamlit and MistralAI are installed.")
